@@ -1,25 +1,19 @@
-let pronoun = ["the", "our"];
-let adj = ["great", "big"];
-let noun = ["jogger", "raccoon"];
-let extension = [".com", ".pt", ".be", ".cat"];
-let Output = [];
+const excuses = [
+  "My dog ate my homework.",
+  "I had a flat tire.",
+  "I was stuck in traffic.",
+  "I overslept.",
+  "I had a family emergency.",
+  "My alarm didn't go off.",
+  "I was feeling under the weather.",
+  "I had a doctor's appointment.",
+  "I got lost on the way.",
+  "I had to help a friend in need."
+];
 
-function Name(value1, value2, value3, value4) {
-  for (let i = 0; i < value1.length; i++) {
-    for (let j = 0; j < value2.length; j++) {
-      for (let k = 0; k < value3.length; k++) {
-        for (let l = 0; l < value4.length; l++) {
-          let domainName = value1[i] + value2[j] + value3[k] + value4[l];
-          Output.push(domainName);
-          let myTarget = document.getElementById("hello");
-          let myElement = document.createElement("p");
-          myElement.innerText = domainName;
-          myTarget.appendChild(myElement);
-        }
-      }
-    }
-  }
+function generateExcuse() {
+  const randomIndex = Math.floor(Math.random() * excuses.length);
+  return excuses[randomIndex];
 }
 
-Name(pronoun, noun, adj, extension);
-console.log(Output);
+document.getElementById("excuse").innerText = generateExcuse();
